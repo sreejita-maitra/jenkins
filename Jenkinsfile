@@ -29,7 +29,7 @@ pipeline {
         always {
             
             echo 'Pipeline completed'
-            subject: 'Pipeline completed', body: 'The Jenkins pipeline has completed successfully.'
+           
         }
     }
 }
