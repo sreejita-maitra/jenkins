@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Hello World') {
             steps {
-                sh 'javac HelloWorld.java'
-                sh 'java HelloWorld.java'
+                sh 'java HelloWorld'
             }
         }
         stage('Hello Wipro') {
@@ -22,7 +21,16 @@ pipeline {
     
     post {
         always {
-             
+            // Archive artifacts
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            
+            // Send email notification
+            emailext (
+                to: 'your.email@example.com',
+                subject: 'Pipeline Status - ${currentBuild.result}',
+                body: 'The pipeline execution status is ${currentBuild.result}',
+                attachLog: true
+            )
         }
     }
 }
