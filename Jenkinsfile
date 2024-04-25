@@ -4,22 +4,30 @@ pipeline {
     stages {
         stage('Hello World') {
             steps {
-                script {
-                    try {
-                        sh 'javac HelloWorld.java'
-                        sh 'java HelloWorld'
-                    } catch (Exception e) {
-                        echo "Failed to compile or execute HelloWorld: ${e.message}"
-                        currentBuild.result = 'FAILURE'
-                    }
-                }
+                // Compile and run HelloWorld Java program using batch commands
+                bat 'javac HelloWorld.java'
+                bat 'java HelloWorld'
             }
         }
-        // Repeat similar steps for other stages
+        stage('Hello Wipro') {
+            steps {
+                // Compile and run HelloWipro Java program using batch commands
+                bat 'javac HelloWipro.java'
+                bat 'java HelloWipro'
+            }
+        }
+        stage('Hello Jenkins') {
+            steps {
+                // Compile and run HelloJenkins Java program using batch commands
+                bat 'javac HelloJenkins.java'
+                bat 'java HelloJenkins'
+            }
+        }
     }
     
     post {
         always {
+            // Add post-build actions here
             echo 'Pipeline completed'
         }
     }
