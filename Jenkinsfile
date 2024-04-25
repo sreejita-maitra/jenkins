@@ -29,9 +29,6 @@ pipeline {
         always {
             
             echo 'Pipeline completed'
-            
-            
-            fingerprint: true
             mail to: 'sreejita.maitra@wipro.com', subject: 'Pipeline completed', body: 'The Jenkins pipeline has completed successfully.'
         }
     }
