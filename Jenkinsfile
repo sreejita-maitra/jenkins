@@ -26,7 +26,7 @@ pipeline {
             
             // Send email notification
             emailext (
-                to: 'sreejita.maitra@wipro.com',
+                to: 'sreejita.maitra@gmail.com',
                 subject: 'Pipeline Status - ${currentBuild.result}',
                 body: 'The pipeline execution status is ${currentBuild.result}',
                 attachLog: true
