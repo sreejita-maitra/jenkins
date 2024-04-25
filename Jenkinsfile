@@ -4,17 +4,23 @@ pipeline {
     stages {
         stage('Hello World') {
             steps {
-                echo 'Hello World'
+                // Compile and run Hello World Java program
+                sh 'javac HelloWorld.java'
+                sh 'java HelloWorld'
             }
         }
         stage('Hello Wipro') {
             steps {
-                echo 'Hello Wipro'
+                // Compile and run Hello Wipro Java program
+                sh 'javac HelloWipro.java'
+                sh 'java HelloWipro'
             }
         }
         stage('Hello Jenkins') {
             steps {
-                echo 'Hello Jenkins'
+                // Compile and run Hello Jenkins Java program
+                sh 'javac HelloJenkins.java'
+                sh 'java HelloJenkins'
             }
         }
     }
