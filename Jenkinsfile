@@ -29,7 +29,7 @@ pipeline {
         always {
             
             echo 'Pipeline completed'
-            mail to: 'sreejita.maitra@wipro.com', subject: 'Pipeline completed', body: 'The Jenkins pipeline has completed successfully.'
+            subject: 'Pipeline completed', body: 'The Jenkins pipeline has completed successfully.'
         }
     }
 }
