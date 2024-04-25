@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello World') {
             steps {
-                sh 'java HelloWorld'
+                sh 'javac HelloWorld.java'
+                sh 'java HelloWorld.java'
             }
         }
         stage('Hello Wipro') {
