@@ -6,21 +6,21 @@ pipeline {
             steps {
                 // Compile and run HelloWorld Java program using batch commands
                 bat 'javac HelloWorld.java'
-                bat 'java HelloWorld'
+                bat 'java HelloWorld.java'
             }
         }
         stage('Hello Wipro') {
             steps {
                 // Compile and run HelloWipro Java program using batch commands
                 bat 'javac HelloWipro.java'
-                bat 'java HelloWipro'
+                bat 'java HelloWipro.java'
             }
         }
         stage('Hello Jenkins') {
             steps {
                 // Compile and run HelloJenkins Java program using batch commands
                 bat 'javac HelloJenkins.java'
-                bat 'java HelloJenkins'
+                bat 'java HelloJenkins.java'
             }
         }
     }
